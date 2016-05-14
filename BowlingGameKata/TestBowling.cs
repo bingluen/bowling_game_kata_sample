@@ -30,7 +30,7 @@ namespace BowlingGameKata
 
             Assert.That(Game.GetScore(pins), Is.EqualTo((1+1)*10));
         }
-/*
+
         [Test]
         public void OneStrike()
         {
@@ -41,7 +41,7 @@ namespace BowlingGameKata
             Assert.That(Game.GetScore(pins), Is.EqualTo(
                 (10 + 1 + 1) + (1 + 1)* 9));
         }
-
+/*
         [Test]
         public void TwoStrike()
         {

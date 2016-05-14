@@ -26,24 +26,18 @@ namespace BowlingGameKata
         public static int GetScore(List<set> pins)
         {
             int score = 0;
-     /*       for (int i = 0; i < pins.Count ;i++ )
-            {
-                if (pins[i] == 10 && pins[i+2] != 10 )
-                    score += pins[i] + pins[i + 2] + pins[i + 3];
-                else if( pins[i] == 10 ) // 連續兩球strike
-                    score += pins[i] + pins[i + 2] + pins[i + 4];
-                else
-                    score += pins[i];
-            }
-            */
 
             for (int i = 0; i < pins.Count; i++)
             {
-                score += pins[i].first + pins[i].second;    
+                score += pins[i].first + pins[i].second;
+                if (pins[i].first == 10)
+                {
+                    score += pins[i + 1].first;
+                    score += pins[i + 1].second;
+                }
             }
-
-
-                return score;
+            
+            return score;
         }
     }
 }
