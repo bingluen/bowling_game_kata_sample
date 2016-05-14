@@ -30,10 +30,17 @@ namespace BowlingGameKata
             for (int i = 0; i < pins.Count; i++)
             {
                 score += pins[i].first + pins[i].second;
-                if (pins[i].first == 10)
+                if (pins[i].first == 10 && pins[i+1].first != 10)
                 {
                     score += pins[i + 1].first;
                     score += pins[i + 1].second;
+                }
+                else if (pins[i].first == 10 && pins[i+1].first == 10)
+                {
+                    score += pins[i + 1].first;
+                    score += pins[i + 2].first;
+                    score += pins[i + 2].first;
+                    score += pins[i + 2].second;
                 }
             }
             
